@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>微信管家</title>
+    <meta name="Generator" content="Sublime Text3">
+    <meta name="Author" content="seamood">
+    <link rel="stylesheet" type="text/css" href="../css/presonitem.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+   	<header>
+   		<nav>
+   		    <img src="../img/logo.jpg" class="left">
+   			<ul>
+   				<li><a href="#" >首页</a></li>
+   				<li><a href="#" >营销手段</a></li>
+   				<li><a href="#" >服务优势</a></li>
+   				<li><a href="#">特色功能</a></li>
+   				<li><a href="#" >技术特点</a></li>
+   				<li><a href="#" >申请加入</a></li>
+   				<li><a href="#">登录注册</a></li>
+   				<li><a href="#" >加盟代理</a></li>
+   			</ul>
+   		</nav>
+   	</header>
+   	<div class='content'>
+   		<div class="page" ><div>
+      <input type="button" class="shouye_btn" value="">
+      </div></div>
+   		<div class="page" ><div>
+       <div class="page_div2_text">
+         <p>微信6亿用户，</p>
+         <p>企业能不进军微信营销？</p><br>
+<pre>
+中国11.46亿网民中，78%在使用手机上网
+2013年载至7月底微信用户突破5亿
+未来的营销
+不需要太多的途径
+只要让你的产品进入消费者的手机
+就是最好的营销
+抓住11亿用户，微信T管家马上创建您的微网站
+</pre>
+       </div> 
+      </div></div>
+   		<div class="page" ><div>
+        <div class="page_head">
+        <ul>
+        <li > <span>移动</span><span style="color:rgb(254,160,5)">营销手段</span><span>,未来触手可及！</span></li>
+        <li>moblie marketing tools,the future at your fingertips!</li>
+        </ul>
+        <div class="page2_select">
+          
+        </div>
+        </div>
+      </div></div>
+   		<div class="page" style="color:#fff;" class="page3"><div>
+        <span class='page3_title'>微信T管家服<br>务优势</span>
+        <img src="../img/b4_01.png" class="page3_img1">
+        <img src="../img/b4_02.png" class="page3_img2">
+      </div></div>
+      <div class="page"><div>
+        <div class="page4">
+          <div style="font-size: 2em;margin-bottom:18px;"><span style="color:rgb(254,160,5);">微信T管家特色</span>功能模块</div>
+          <p style="color:#ccc">餐饮、酒店、KTV、外卖、电子商务、房地产、汽车4s店、医疗、快消、旅游、影院、婚庆等更多行业持续增添中......</p>
+        </div>
+           <ul id="page4_ul">
+            
+          </ul>
+      </div></div>
+   		<div class="page" style="color:#fff"> <div>
+               <div class="page5_head xiangtong">
+                 <p style="font-size:2em;margin-bottom:10px">技术特点</p>
+                 <p style="font-size:1em;">Technical Characteristics</p>
+               </div> 
+               <img src="../img/b6_01.png" class="shou">
+      </div></div>
+   		<div class="page" ><div>
+          <div class="page6_div">
+            <div>加入<span style="color:rgb(254,160,5);">我们</span></div>
+          </div>
+          <div class="linecustom">
+              <div class="QQcustom"></div>
+             <div class="QQyuan"> 
+                 <a href="#" class="QQyuan1"></a>
+                 <a href="#" class="QQyuan2"></a>
+                 <a href="#" class="QQyuan3"></a></div>
+                 <span>微信T管家会员开通请联系在线客服</span>
+             </div>
+             <div class="denglu">   
+               <form  name="chm_del"  method="post" onsubmit=" return func(shet);" id="shet">
+                      <div class="genglu_div">登录<span style="color:rgb(160,160,160);">/login</span></div>
+                      <input type="text" name="name" placeholder="用户名" id="name_id" class="input_kuang">
+                      <input type="password" name="name" placeholder="密码" id="password_id" class="input_kuang">
+                      <button type="submit" name="denglu" value="denglu" class="btn">登录</button>  
+              </form>
+             </div>
+             <div class="zhuce">
+                <form  onsubmit="return suceess(sh);" id='sh'>
+                     <div class="genglu_div">注册<span style="color:rgb(160,160,160);">/Register</span></div>
+                      <input type="text" name="name" placeholder="用户名" id="name1_id" class="input_kuang">
+                      <input type="password" name="name" placeholder="密码" id="password1_id" class="input_kuang">
+                     <input type="password" name="name" placeholder="重复密码" class="input_kuang" id="chongzhi" >
+                     <input type="email" name="email" placeholder="邮箱" class="input_kuang">
+                    <button type="submit" name="denglu" value="denglu" class="btn">登录</button>  
+                </form>
+            </div>
+      </div></div>
+ <!--   		<div class="page" >8888888888888888</div> -->
+   	</div><!-- content 结束-->
+</body>
+<script type="text/javascript">
+var new_date=[];
+function fn(date){
+    new_date=date;
+}
+var chongzhi=document.getElementById('chongzhi');
+var chm_name1=document.getElementById('name1_id');
+var password_id1=document.getElementById('password1_id');
+var chm_name=document.getElementById('name_id');
+var password_id=document.getElementById('password_id');
+//定义一个数据库
+var user=openDatabase()
+function suceess(obj){                     
+                     if(chm_name1.value!=""){
+                        chm_name1.value="请填写密码"
+                         return true;
+                     }
+                    return false;
+}
+function func(obj){                     
+                     if(chm_name.value!="格式错误！"&&chm_name.value!=""&&password_id.value!=""&&password_id.value!="密码错误！"){
+                        alert("提交成功")
+                         return true;
+                     }
+                    return false;
+}
+
+window.onload=function(){
+  var nav=document.getElementsByTagName('nav')[0];
+  var nav_a=nav.getElementsByTagName("a");
+  var scrool_div=document.getElementsByClassName('content')[0].children; 
+  var page4_ul=document.getElementById('page4_ul');
+
+  
+
+for(var i=0;i<nav_a.length-1;i++){//使各个div跳转和添加背景色
+      scrool_div[i].style.backgroundImage="url(../img/b"+(i+1)+"_bg.jpg)";
+      scrool_div[i].children[0].className="biaozhun";
+}
+for(var i=0;i<nav_a.length-1;i++){//创建各个div的内容
+     switch(i){
+                case 0:creatediv0 ();
+                case 1:creatediv1();
+                case 2:creatediv2 ();
+                case 3:creatediv3();
+                case 4:cratediv4();
+                case 5:creatediv5();  
+          }
+
+}
+
+chm_name.onblur=function()
+ {
+      
+      if(!ischina(chm_name.value)){
+          chm_name.value="格式错误！";
+      }
+ }
+ password_id.onblur=function()
+ {
+      
+      if(!ismima(chm_name.value)){
+          password_id.value="密码错误！";
+      }
+ }
+  
+function ismima(str)
+       {
+          var reg=/(^[\u4E00-\u9FA5]{2,4}$)|(^[0-9]{11}$)/;/*定义验证表达式*/
+          return reg.test(str);/*进行验证*/
+      } 
+function ischina(str)
+       {
+          var reg=/^[\u4E00-\u9FA5]{2,4}$/;/*定义验证表达式*/
+          return reg.test(str);/*进行验证*/
+      }
+
+console.log(new_date)
+
+ for(var i=0;i<nav_a.length;i++){
+    nav_a[i].index=i;
+    nav_a[i].onclick=function  () 
+    {
+      window.scrollTo(0,978*this.index);
+      return false;
+    }
+  }
+function creatediv5(){
+                      var page5_div=document.createElement('div');
+                          page5_div.className="page_divzhongxin";
+                      var  page5_divup=document.createElement('div');
+                          page5_divup.className="page5_divup";
+                          page5_div.appendChild(page5_divup);
+                      var  page5_divdown=document.createElement('div');
+                          page5_divdown.className="page5_divdown";
+                          page5_div.appendChild(page5_divdown);
+                       for(var i=0;i<new_date.jishutedian.length;i++)
+                       {
+                             var page5_p=document.createElement('p');
+                             page5_p.className="xiangtong page_p"+i;
+                             page5_p.innerHTML=new_date.jishutedian[i];    
+                             var page5_img=document.createElement('img');
+                             page5_img.src="../img/dian.png";
+                             page5_img.className="page5_img"+i;
+                              page5_div.appendChild( page5_img);
+                             page5_div.appendChild( page5_p);
+                             scrool_div[5].children[0].appendChild( page5_div);
+                      }
+
+                };
+function cratediv4(){
+                for(var i=0;i<new_date.gongnengmokuai.length;i++){
+                         var page4_li=document.createElement('li');
+                          if(i<4){
+                              page4_li.className="page4_li uprunning";
+                               }
+                          else if(i>3&&i<8){
+                                 page4_li.className="page4_li yuandi";
+                             }
+                          else{
+                              page4_li.className="page4_li downruning";
+                            }
+                         var div_img=document.createElement('div');
+                         div_img.style.height="90px";
+                         var page4_img=document.createElement('img');
+                         page4_img.index=i;
+                         page4_img.src=new_date.gongnengmokuai[i].outimg;
+                         page4_img.className="page4_li_img";
+                         div_img.appendChild(page4_img);
+                         page4_li.appendChild(div_img);
+                         var page4_p1=document.createElement('p');
+                         page4_p1.innerHTML=new_date.gongnengmokuai[i].name;
+                         var page4_p2=document.createElement('p');
+                         page4_p2.innerHTML=new_date.gongnengmokuai[i].content;
+                         page4_li.appendChild(page4_p1);
+                         page4_li.appendChild(page4_p2);
+                         page4_ul.appendChild(page4_li);
+                         page4_img.onmouseover=function(){this.src=new_date.gongnengmokuai[this.index].overimg; }
+                        page4_img.onmouseout=function(){ this.src=new_date.gongnengmokuai[this.index].outimg;}
+                      }
+                };
+
+ function creatediv3(){
+                for(var i=0;i<new_date.fuwuyoushi.length;i++){
+                     var  page3_p2=document.createElement('p');
+                     page3_p2.className="page3_p2"
+                      page3_p2.innerHTML=new_date.fuwuyoushi[i].name;
+                     var page3_p1=document.createElement('p');
+                     page3_p1.className="page3_p1"
+                      page3_p1.innerHTML=new_date.fuwuyoushi[i].content;
+                     var  page3_div=document.createElement('div');
+                       page3_div.className="page3_div"+i;
+                       page3_div.style.top=300+i*60+"px";
+                      page3_div.appendChild(page3_p2);
+                       page3_div.appendChild(page3_p1);
+                        scrool_div[3].children[0].appendChild(page3_div);
+                      }
+                };
+function creatediv2 (){
+                for(var i=0;i<new_date.yingxiao.length;i++){
+                    var div2=document.createElement("div");
+                    var right_algin=parseInt(new_date.yingxiao.length/2);
+                    div2.className="yingxiao_div"+i;
+                    var p=document.createElement("p");
+                    p.className="yingxiao_texthear";
+                    p.innerHTML=new_date.yingxiao[i].name;
+                    div2.appendChild(p);
+                    var pre=document.createElement('div');
+                    pre.className="yingxiao_textcontent";
+                    pre.innerHTML=new_date.yingxiao[i].content;
+                    div2.appendChild(pre);
+                    if(i<right_algin){
+                      p.style.textAlign="right"; 
+                      pre.style.textAlign="right"; 
+                    }
+                    scrool_div[2].children[0].appendChild(div2);
+                  }
+
+                };
+function creatediv1(){
+                    for(var i=1;i<5;i++)
+                    {
+                      var img=document.createElement("img");
+                      img.className="scrool_divBimg_"+i;
+                      img.src="../img/b2_0"+i+".png";
+                      scrool_div[1].children[0].appendChild(img);
+                    }
+                };
+function creatediv0 (){
+                    for(var i=1;i<5;i++){
+                      var img=document.createElement("img");
+                      img.className="scrool_divimg_"+i;
+                      img.src="../img/b1_0"+i+".png"
+                      scrool_div[0].children[0].appendChild(img);
+                    }
+                };
+
+}
+</script>
+<script type="text/javascript" src="presonitem.json"></script>
+</html>
