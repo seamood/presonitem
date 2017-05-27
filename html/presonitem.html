@@ -99,8 +99,9 @@
                 <form  onsubmit="return suceess(sh);" id='sh'>
                      <div class="genglu_div">注册<span style="color:rgb(160,160,160);">/Register</span></div>
                       <input type="text" name="name" placeholder="用户名" id="name1_id" class="input_kuang">
-                      <input type="password" name="name" placeholder="密码" id="password1_id" class="input_kuang">
+                      <input type="text" name="name" placeholder="密码" id="password1_id" class="input_kuang">
                      <input type="password" name="name" placeholder="重复密码" class="input_kuang" id="chongzhi" >
+                   <!--   <span style="position:relative;top:-10px;color:red;display:none;" id="yanzheng">密码不一致!</span> -->
                      <input type="email" name="email" placeholder="邮箱" class="input_kuang">
                     <button type="submit" name="denglu" value="denglu" class="btn">登录</button>  
                 </form>
@@ -119,19 +120,45 @@ var chm_name1=document.getElementById('name1_id');
 var password_id1=document.getElementById('password1_id');
 var chm_name=document.getElementById('name_id');
 var password_id=document.getElementById('password_id');
+var name=localStorage.getItem("name");
+var mima=localStorage.getItem("mima");
+if(name!=""){
+  chm_name.value=name;
+}
 //定义一个数据库
-var user=openDatabase()
+// var user=openDatabase()
 function suceess(obj){                     
-                     if(chm_name1.value!=""){
-                        chm_name1.value="请填写密码"
-                         return true;
-                     }
+                     if(chm_name1.value==""||chm_name1.value=="格式错误！"){
+                        chm_name.value="请填写用户名";
+                        alert("请填写用户名")
+                         return false;
+                     }else{
+                     if(password_id1.value=="密码错误！"||password_id1.value==""){
+                        password_id1.value="请写正确密码";
+                        alert("请写正确密码")
+                         return false;
+                     }else{if(chongzhi.placeholder=="密码不一致！"){
+                         alert("密码不一致");
+                         return false;
+                               }else{
+                                localStorage.setItem("name",chm_name1.value);
+                                 localStorage.setItem("mima",password_id1.value);
+                                return true;
+                               }
+                             }
+                   }
+                     
+
                     return false;
 }
+
 function func(obj){                     
-                     if(chm_name.value!="格式错误！"&&chm_name.value!=""&&password_id.value!=""&&password_id.value!="密码错误！"){
+                     if(chm_name.value!="格式错误！"&&chm_name.value!=""&&password_id.value!=""&&password_id.value!="密码错误！"&&password_id.value==mima){
                         alert("提交成功")
                          return true;
+                     }else{
+                      alert("用户名和密码不一致！");
+                      return false;
                      }
                     return false;
 }
@@ -174,10 +201,32 @@ chm_name.onblur=function()
           password_id.value="密码错误！";
       }
  }
-  
+ chm_name1.onblur=function()
+ {
+      
+      if(!ischina(chm_name1.value)){
+          chm_name1.value="格式错误！";
+      }
+ }
+ password_id1.onblur=function()
+ {
+      
+      if(!ismima(password_id1.value)){
+          password_id1.value="密码错误！";
+      }
+ } 
+ var yanzheng=document.getElementById("yanzheng");
+ chongzhi.onblur=function()
+ {
+      
+      if(chongzhi.value!=password_id1.value){
+        chongzhi.value="";
+        chongzhi.placeholder="密码不一致！";
+      }
+ }
 function ismima(str)
        {
-          var reg=/(^[\u4E00-\u9FA5]{2,4}$)|(^[0-9]{11}$)/;/*定义验证表达式*/
+          var reg=/(^[\u4E00-\u9FA5]{2,4}$)|(^[0-9]{6,12}$)/;/*定义验证表达式*/
           return reg.test(str);/*进行验证*/
       } 
 function ischina(str)
@@ -185,9 +234,6 @@ function ischina(str)
           var reg=/^[\u4E00-\u9FA5]{2,4}$/;/*定义验证表达式*/
           return reg.test(str);/*进行验证*/
       }
-
-console.log(new_date)
-
  for(var i=0;i<nav_a.length;i++){
     nav_a[i].index=i;
     nav_a[i].onclick=function  () 
