@@ -9,6 +9,11 @@
     <script type="text/javascript" src="jquery.min.js"></script>
 </head>
 <body>
+    <div class="fexiedUl">
+      <ul>
+        
+      </ul>
+    </div>
    	<header>
    		<nav>
    		    <img src="../img/logo.jpg" class="left">
@@ -107,11 +112,11 @@
                 </form>
             </div>
       </div></div>
- <!--   		<div class="page" >8888888888888888</div> -->
+
    	</div><!-- content 结束-->
 </body>
 <script type="text/javascript">
-var new_date=[];
+var new_date=[],divImg1=[];
 function fn(date){
     new_date=date;
 }
@@ -184,9 +189,26 @@ for(var i=0;i<nav_a.length-1;i++){//创建各个div的内容
                 case 4:cratediv4();
                 case 5:creatediv5();  
           }
+     var li=document.createElement('li');
+     $('.fexiedUl').append(li);
+     li.index=i;
+     $(li).click(function(){
+        $('.fexiedUl li').css('backgroundColor','#ccc');
+        $(this).css('backgroundColor','pink');
+        window.scrollTo(0,978*this.index);
+        window.location.reload();
+     })
 
 }
-
+for(var i=0;i<nav_a.length;i++){
+    nav_a[i].index=i;
+    nav_a[i].onclick=function  () 
+    {
+      window.scrollTo(0,978*this.index);
+      window.location.reload();
+      return false;
+    }
+  }
 chm_name.onblur=function()
  {
       
@@ -234,14 +256,6 @@ function ischina(str)
           var reg=/^[\u4E00-\u9FA5]{2,4}$/;/*定义验证表达式*/
           return reg.test(str);/*进行验证*/
       }
- for(var i=0;i<nav_a.length;i++){
-    nav_a[i].index=i;
-    nav_a[i].onclick=function  () 
-    {
-      window.scrollTo(0,978*this.index);
-      return false;
-    }
-  }
 function creatediv5(){
                       var page5_div=document.createElement('div');
                           page5_div.className="page_divzhongxin";
@@ -343,15 +357,16 @@ function creatediv1(){
                       scrool_div[1].children[0].appendChild(img);
                     }
                 };
+                
 function creatediv0 (){
                     for(var i=1;i<5;i++){
                       var img=document.createElement("img");
                       img.className="scrool_divimg_"+i;
                       img.src="../img/b1_0"+i+".png"
+                      divImg1.push(img);
                       scrool_div[0].children[0].appendChild(img);
                     }
                 };
-
 }
 </script>
 <script type="text/javascript" src="presonitem.json"></script>

@@ -37,6 +37,21 @@ header nav ul li a{
 	color: #fff;
 }
 /*=============================导航条结束======================*/
+.fexiedUl{
+  width: 20px;
+  position: fixed;
+  right: 10px;
+  top: 400px;
+  z-index: 999;
+}
+.fexiedUl li{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #ccc;
+  margin-bottom: 10px;
+}
 .content{
 	position: relative;
 	top:60px;
